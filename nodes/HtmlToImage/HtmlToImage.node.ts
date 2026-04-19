@@ -11,10 +11,11 @@ export class HtmlToImage implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'HTML to Image',
 		name: 'htmlToImage',
-		icon: { light: 'file:../../icons/icon.svg', dark: 'file:../../icons/icon.svg' },
+		icon: { light: 'file:../../icons/light.svg', dark: 'file:../../icons/dark.svg' },
 		group: ['transform'],
 		version: 1,
 		description: 'Capture website screenshots or render HTML as PNG images using PDF API Hub',
+		subtitle: '={{$parameter["operation"]}}',
 		defaults: { name: 'HTML to Image' },
 		inputs: [NodeConnectionTypes.Main],
 		outputs: [NodeConnectionTypes.Main],
@@ -28,18 +29,18 @@ export class HtmlToImage implements INodeType {
 				noDataExpression: true,
 				options: [
 				{
-								"name": "URL to Image",
-								"value": "urlToImage",
-								"description": "Capture website screenshot as image",
-								"action": "Capture a website screenshot as an image"
+					name: 'URL to Image',
+					value: 'urlToImage',
+					description: 'Capture website screenshot as image',
+					action: 'Capture a website screenshot as an image',
 				},
 				{
-								"name": "HTML to Image",
-								"value": "htmlToImage",
-								"description": "Generate image from HTML/CSS",
-								"action": "Convert HTML to image"
-				}
-],
+					name: 'HTML to Image',
+					value: 'htmlToImage',
+					description: 'Generate image from HTML/CSS',
+					action: 'Convert HTML to image',
+				},
+			],
 				default: 'urlToImage',
 			},
 			...description,
